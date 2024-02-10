@@ -1,0 +1,29 @@
+{% extends "bookshelf/base.html" %}
+
+{% block content %}
+    <h1>All Books</h1>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Year of Publishing</th>
+                    <th>Copies Printed</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for book in books %}
+                <tr>
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.author_full_name }}</td>
+                    <td>{{ book.year_of_publishing }}</td>
+                    <td>{{ book.copies_printed }}</td>
+                    <td>{{ book.short_description }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
