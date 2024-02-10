@@ -1,4 +1,4 @@
-from django.http import HttpRequest, HttpResponse
+from django.http import Http404, HttpRequest, HttpResponse
 from django.shortcuts import render
 
 from books.models import Book
@@ -10,5 +10,8 @@ def library_view(request: HttpRequest) -> HttpResponse:
 
 
 def book_detail_view(request: HttpRequest, book_id: int) -> HttpResponse:
-    book = Book.objects.get(id=book_id)
+    try:
+        book = Book.objects.get(id=book_id)
+    except Book.DoesNotExist:
+        raise Http404
     return render(request, 'bookshelf/book_detail.html', context={'book': book})
