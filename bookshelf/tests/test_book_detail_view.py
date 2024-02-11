@@ -1,7 +1,7 @@
 import pytest
 
 
-@pytest.mark.parametrize('id_, expected_status, expected_title',[
+@pytest.mark.parametrize('id_, expected_status, expected_title', [
     (1, 200, b'Book 1'),
     (2, 200, b'Book 2'),
     (3, 200, b'Book 3'),
