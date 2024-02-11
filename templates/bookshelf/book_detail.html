@@ -1,0 +1,15 @@
+{% extends "bookshelf/base.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h1>{{ book.title }}</h1>
+                <p><strong>Author:</strong> {{ book.author_full_name }}</p>
+                <p><strong>Year of Publishing:</strong> {{ book.year_of_publishing }}</p>
+                <p><strong>Copies Printed:</strong> {{ book.copies_printed }}</p>
+                <p><strong>Description:</strong> {{ book.short_description }}</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
