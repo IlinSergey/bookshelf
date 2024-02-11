@@ -28,4 +28,5 @@ def create_books():
             short_description='Short description 3',
         )
     ]
-    return books
+    yield books
+    Book.objects.all().delete()
